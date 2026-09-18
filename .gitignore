@@ -1,1 +1,4 @@
 .credential
+node_modules/**
+dist/**
+.astro/**

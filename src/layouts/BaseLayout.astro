@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Eat a Banana',
+  description = 'Conversations about the things that make a life interesting.'
+} = Astro.props;
+const pageTitle = title === 'Eat a Banana' ? title : `${title} — Eat a Banana`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/">Eat a Banana</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/episodes/">Episodes</a>
+          <a href="/about/">About</a>
+          <a href="/rss.xml">RSS</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <small>Eat a Banana Podcast</small>
+      <small>New conversations, occasionally</small>
+    </footer>
+  </body>
+</html>

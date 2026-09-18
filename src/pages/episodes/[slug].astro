@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { episodes } from '../../data/episodes';
+
+export function getStaticPaths() {
+  return episodes.map((episode) => ({
+    params: { slug: episode.slug },
+    props: { episode }
+  }));
+}
+
+const { episode } = Astro.props;
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+}).format(new Date(`${episode.date}T12:00:00`));
+---
+<BaseLayout title={episode.title} description={episode.description}>
+  <article class="prose">
+    <p class="eyebrow">{formattedDate}{episode.duration && ` / ${episode.duration}`}</p>
+    <h1>{episode.title}</h1>
+    <p>{episode.description}</p>
+    <audio class="audio" controls preload="metadata" src={episode.audioUrl} aria-label={`Play ${episode.title}`}></audio>
+    <p>
+      <a class="button" href={episode.youtubeUrl} target="_blank" rel="noreferrer">
+        <svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z" />
+          <path class="youtube-icon-triangle" d="m9.6 15.8 6.3-3.8-6.3-3.8v7.6Z" />
+        </svg>
+        <span>Watch the video</span>
+      </a>
+    </p>
+  </article>
+</BaseLayout>

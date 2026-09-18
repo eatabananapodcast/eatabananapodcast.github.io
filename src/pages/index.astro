@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortedEpisodes } from '../data/episodes';
+const latestEpisode = sortedEpisodes[0];
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-art">
+      <img src="/images/eat-a-banana-site-cover.png" alt="Eat a Banana podcast cover art" />
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">A podcast about being here</p>
+      <h1 class="display">Eat<br />a Banana.</h1>
+      <p class="intro">Unhurried conversations with curious people about the work, habits, and questions that stay with us.</p>
+      {latestEpisode && <a class="button" href={`/episodes/${latestEpisode.slug}/`}>Listen to the latest episode</a>}
+      <p class="hero-note">Recorded conversations<br />Available wherever you listen</p>
+    </div>
+  </section>
+</BaseLayout>
