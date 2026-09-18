@@ -78,7 +78,7 @@ main { margin: 0 auto; max-width: 1280px; padding: 48px 32px 112px; }
 a.button, button { --youtube-triangle: var(--ink); align-items: center; background: var(--ink); border: 0; color: var(--paper); cursor: pointer; display: inline-flex; font-family: var(--mono); font-size: 0.68rem; gap: 9px; letter-spacing: 0.08em; padding: 13px 16px; text-decoration: none; text-transform: uppercase; }
 a.button:hover, button:hover { background: var(--accent-deep); }
 a.button.secondary { --youtube-triangle: var(--paper); background: transparent; border: 1px solid var(--ink); color: var(--ink); }
-a.button.secondary:hover { color: var(--paper); }
+a.button.secondary:hover { color: #fff; }
 .youtube-icon { flex: 0 0 auto; height: 15px; width: 15px; }
 .youtube-icon-triangle { fill: var(--youtube-triangle); }
 .audio { margin-top: 24px; width: 100%; }
