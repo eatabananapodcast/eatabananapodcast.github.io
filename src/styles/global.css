@@ -50,7 +50,8 @@ img { display: block; max-width: 100%; }
   max-width: 1280px;
   padding: 26px 32px;
 }
-.brand { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+.brand { align-items: center; display: inline-flex; font-size: 0.82rem; font-weight: 700; gap: 9px; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+.brand-logo { height: 32px; width: auto; }
 .nav { display: flex; gap: 28px; }
 .nav a { font-size: 0.85rem; text-decoration: none; }
 .nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -69,7 +70,7 @@ main { margin: 0 auto; max-width: 1280px; padding: 48px 32px 112px; }
 .page-heading { border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 52px 0 28px; }
 .page-heading h1 { font-size: clamp(2.6rem, 7vw, 6.5rem); letter-spacing: -0.07em; line-height: 0.95; margin: 0; }
 .merch-placeholder { align-items: center; background: var(--sand); display: flex; flex-direction: column; justify-content: center; margin-top: 56px; min-height: 460px; padding: 48px; text-align: center; }
-.merch-placeholder-mark { border: 2px solid var(--ink); border-radius: 50%; font-size: clamp(3rem, 8vw, 7rem); font-weight: 700; letter-spacing: -0.12em; line-height: 0.8; padding: 0.28em 0.18em 0.34em 0.08em; }
+.merch-placeholder-logo { height: clamp(150px, 20vw, 220px); width: auto; }
 .merch-placeholder p { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; margin: 36px 0 0; text-transform: uppercase; }
 .episode-list { list-style: none; margin: 0; padding: 0; }
 .episode-card { border-bottom: 1px solid var(--line); display: grid; gap: 32px; grid-template-columns: 130px 56px minmax(0, 1fr) 220px; padding: 32px 0; }
